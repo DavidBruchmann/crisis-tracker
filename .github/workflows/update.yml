@@ -35,6 +35,13 @@ jobs:
           #else
           #  echo "API failed or returned error. Using placeholder."
           #fi
+      - name: Debug Data
+        run: |
+          echo "Checking Brent Data:"
+          cat data/brent.json
+          echo "Checking WTI Data:"
+          cat data/wti.json
+
       - name: Validate JSON Files
         run: |
           # If any file contains HTML (starts with <), reset it to prevent Hugo crash
