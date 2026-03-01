@@ -1,0 +1,8 @@
+baseURL = 'https://davidbruchmann.github.io/crisis-tracker'
+languageCode = 'en-us'
+title = 'Hormuz-Dubai Status | Live Logistics Utility'
+theme = 'minimal'
+
+[params]
+    description = "Live status of Strait of Hormuz, Oil prices, and Dubai logistics. Low-bandwidth optimized."
+    vpn_link = "https://ko-fi.com/davidbruchmann" # Replace with your link

@@ -1,0 +1,26 @@
+{{ define "main" }}
+    <h1>Hormuz-Dubai Live Status</h1>
+
+    <!-- Manual Status Toggle (You can edit this in index.md) -->
+    <div class="status-box red">
+        STRAIT OF HORMUZ: RESTRICTED / CLOSED
+    </div>
+
+    <div class="data-grid">
+        <div class="card">
+            <strong>Brent Oil</strong><br>
+            ${{ .Site.Data.oil.price }} ({{ .Site.Data.oil.change }})
+        </div>
+        <div class="card">
+            <strong>DXB Flights</strong><br>
+            SUSPENDED
+        </div>
+    </div>
+
+    <h3>Emergency Resources</h3>
+    <p>Communication is failing. Secure your connection now:</p>
+    <a href="{{ .Site.Params.vpn_link }}" class="btn">Get Crisis-Resistant VPN</a>
+
+    <hr>
+    {{ .Content }}
+{{ end }}
