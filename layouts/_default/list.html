@@ -1,31 +1,40 @@
-<div class="data-grid">
-    <!-- Brent Card -->
-    <div class="card">
-        <strong>Brent Crude (Global)</strong><br>
-        {{ if .Site.Data.brent.data }}
-            ${{ (index .Site.Data.brent.data 0).value }}
-        {{ else }}
-            Pending...
-        {{ end }}
+{{ define "main" }}
+    <h1>Hormuz-Dubai Live Status</h1>
+
+    <div class="status-box red">
+        STRAIT OF HORMUZ: RESTRICTED / CLOSED
     </div>
 
-    <!-- WTI Card -->
-    <div class="card">
-        <strong>WTI Crude (US)</strong><br>
-        {{ if .Site.Data.wti.data }}
-            ${{ (index .Site.Data.wti.data 0).value }}
-        {{ else }}
-            Pending...
-        {{ end }}
+    <div class="data-grid">
+        <div class="card">
+            <strong>Brent Crude (Global)</strong><br>
+            {{ if .Site.Data.brent.data }}
+                ${{ (index .Site.Data.brent.data 0).value }}
+            {{ else }}
+                Pending...
+            {{ end }}
+        </div>
+        <div class="card">
+            <strong>WTI Crude (US)</strong><br>
+            {{ if .Site.Data.wti.data }}
+                ${{ (index .Site.Data.wti.data 0).value }}
+            {{ else }}
+                Pending...
+            {{ end }}
+        </div>
+        <div class="card">
+            <strong>Natural Gas</strong><br>
+            {{ if .Site.Data.gas.data }}
+                ${{ (index .Site.Data.gas.data 0).value }}
+            {{ else }}
+                Pending...
+            {{ end }}
+        </div>
     </div>
 
-    <!-- Natural Gas Card -->
-    <div class="card">
-        <strong>Natural Gas</strong><br>
-        {{ if .Site.Data.gas.data }}
-            ${{ (index .Site.Data.gas.data 0).value }}
-        {{ else }}
-            Pending...
-        {{ end }}
-    </div>
-</div>
+    <h3>Emergency Resources</h3>
+    <a href="{{ .Site.Params.vpn_link }}" class="btn">Get Crisis-Resistant VPN</a>
+
+    <hr>
+    {{ .Content }}
+{{ end }}
