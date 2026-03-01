@@ -9,9 +9,20 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Fetch Data
+#        run: |
+#          # Example using AlphaVantage for Oil
+#          curl "https://www.alphavantage.co/${{ secrets.OIL_API_KEY }}" -o data/oil.json
         run: |
-          # Example using AlphaVantage for Oil
-          curl "https://www.alphavantage.co/${{ secrets.OIL_API_KEY }}" -o data/oil.json
+          # Only overwrite if the API returns a valid JSON (not an HTML error)
+          curl -f "https://www.alphavantage.co/{{ secrets.OIL_API_KEY }}" -o data/oil_temp.json || echo "{}" > data/oil_temp.json
+
+          # Check if it contains an error message, if not, move it to the real file
+          if grep -q "Global Quote" data/oil_temp.json; then
+            mv data/oil_temp.json data/oil.json
+          else
+            echo "API failed or returned error. Using placeholder."
+          fi
+
       - name: Setup Hugo
 #        uses: peaceiris/actions-hugo@v2
         uses: peaceiris/actions-hugo@v3
