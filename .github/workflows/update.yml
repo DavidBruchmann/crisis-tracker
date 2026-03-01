@@ -9,12 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Fetch Data
-#        run: |
-#          # Example using AlphaVantage for Oil
-#          curl "https://www.alphavantage.co/${{ secrets.OIL_API_KEY }}" -o data/oil.json
         run: |
 
-        # Create data directory if it doesn't exist
+          # Create data directory if it doesn't exist
           mkdir -p data
 
           # Fetch Brent (Global/Middle East Benchmark)
