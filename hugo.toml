@@ -1,7 +1,7 @@
 baseURL = 'https://davidbruchmann.github.io/crisis-tracker'
 languageCode = 'en-us'
 title = 'Hormuz-Dubai Status | Live Logistics Utility'
-theme = 'minimal'
+# theme = 'minimal'
 
 [params]
     description = "Live status of Strait of Hormuz, Oil prices, and Dubai logistics. Low-bandwidth optimized."
