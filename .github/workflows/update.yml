@@ -11,7 +11,7 @@ jobs:
       - name: Fetch Data
         run: |
           # Example using AlphaVantage for Oil
-          curl "https://www.alphavantage.co${{ secrets.OIL_API_KEY }}" -o data/oil.json
+          curl "https://www.alphavantage.co/${{ secrets.OIL_API_KEY }}" -o data/oil.json
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
       - name: Build
