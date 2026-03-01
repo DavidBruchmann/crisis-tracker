@@ -1,26 +1,31 @@
-{{ define "main" }}
-    <h1>Hormuz-Dubai Live Status</h1>
-
-    <!-- Manual Status Toggle (You can edit this in index.md) -->
-    <div class="status-box red">
-        STRAIT OF HORMUZ: RESTRICTED / CLOSED
+<div class="data-grid">
+    <!-- Brent Card -->
+    <div class="card">
+        <strong>Brent Crude (Global)</strong><br>
+        {{ if .Site.Data.brent.data }}
+            ${{ (index .Site.Data.brent.data 0).value }}
+        {{ else }}
+            Pending...
+        {{ end }}
     </div>
 
-    <div class="data-grid">
-        <div class="card">
-            <strong>Brent Oil</strong><br>
-            ${{ .Site.Data.oil.price }} ({{ .Site.Data.oil.change }})
-        </div>
-        <div class="card">
-            <strong>DXB Flights</strong><br>
-            SUSPENDED
-        </div>
+    <!-- WTI Card -->
+    <div class="card">
+        <strong>WTI Crude (US)</strong><br>
+        {{ if .Site.Data.wti.data }}
+            ${{ (index .Site.Data.wti.data 0).value }}
+        {{ else }}
+            Pending...
+        {{ end }}
     </div>
 
-    <h3>Emergency Resources</h3>
-    <p>Communication is failing. Secure your connection now:</p>
-    <a href="{{ .Site.Params.vpn_link }}" class="btn">Get Crisis-Resistant VPN</a>
-
-    <hr>
-    {{ .Content }}
-{{ end }}
+    <!-- Natural Gas Card -->
+    <div class="card">
+        <strong>Natural Gas</strong><br>
+        {{ if .Site.Data.gas.data }}
+            ${{ (index .Site.Data.gas.data 0).value }}
+        {{ else }}
+            Pending...
+        {{ end }}
+    </div>
+</div>
