@@ -11,6 +11,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Debug Secret
+        run: |
+          KEY_LENGTH=${#SECRET_VALUE}
+          echo "The API Key length is: $KEY_LENGTH characters"
+          if [ "$KEY_LENGTH" -lt 5 ]; then
+            echo "ERROR: API Key is missing or too short!"
+            exit 1
+          fi
+        env:
+          SECRET_VALUE: ${{ secrets.OIL_API_KEY }}
       - uses: actions/checkout@v3
       - name: Fetch Data
         run: |
