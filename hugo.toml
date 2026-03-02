@@ -1,4 +1,4 @@
-baseURL = 'https://davidbruchmann.github.io' # /crisis-tracker/
+baseURL = 'https://davidbruchmann.github.io/crisis-tracker' # /crisis-tracker/
 # baseURL = 'https://davidbruchmann.github.io'
 canonifyURLs = false
 relativeURLs = false
