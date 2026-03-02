@@ -11,8 +11,7 @@
     const ctx = document.getElementById('detailChart').getContext('2d');
 
     // We pull the last 14 days of data from the JSON
-    {{ $data := index .Site.Data .Slug }}
-    const rawData = {{ $data.data | safeJS }};
+    const rawData = {{ (index .Site.Data .Slug).data | jsonify | safeJS }};
     const labels = rawData.slice(0, 14).map(item => item.date).reverse();
     const values = rawData.slice(0, 14).map(item => item.value).reverse();
 
