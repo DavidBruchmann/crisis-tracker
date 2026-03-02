@@ -6,7 +6,7 @@
     <strong>Brent Crude (Global)</strong><br>
     {{ if .Site.Data.brent.data }}
       ${{ (index .Site.Data.brent.data 0).value }}<br>
-      <a href="/brent/" style="font-size: 0.8rem;">View Chart & History →</a>
+      <a href="{{ site.BaseURL }}/brent/" style="font-size: 0.8rem;">View Chart & History →</a>
     {{ else }}
       Pending...
     {{ end }}
@@ -15,7 +15,7 @@
     <strong>WTI Crude (US)</strong><br>
     {{ if .Site.Data.wti.data }}
       ${{ (index .Site.Data.wti.data 0).value }}<br>
-      <a href="/wti/" style="font-size: 0.8rem;">View Chart & History →</a>
+      <a href="{{ site.BaseURL }}/wti/" style="font-size: 0.8rem;">View Chart & History →</a>
     {{ else }}
       Pending...
     {{ end }}
@@ -24,7 +24,7 @@
     <strong>Natural Gas</strong><br>
     {{ if .Site.Data.gas.data }}
       ${{ (index .Site.Data.gas.data 0).value }}<br>
-      <a href="/gas/" style="font-size: 0.8rem;">View Chart & History →</a>
+      <a href="{{ site.BaseURL }}/gas/" style="font-size: 0.8rem;">View Chart & History →</a>
     {{ else }}
       Pending...
     {{ end }}

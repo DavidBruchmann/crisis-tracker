@@ -1,7 +1,7 @@
-baseURL = 'https://davidbruchmann.github.io/crisis-tracker/'
+baseURL = 'https://davidbruchmann.github.io' # /crisis-tracker/
 # baseURL = 'https://davidbruchmann.github.io'
-canonifyURLs = true
-relativeURLs = true
+# canonifyURLs = true
+# relativeURLs = true
 languageCode = 'en-us'
 title = 'Hormuz-Dubai Status | Live Logistics Utility'
 # theme = 'minimal'

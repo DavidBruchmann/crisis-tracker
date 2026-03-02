@@ -76,7 +76,8 @@ jobs:
         run: |
           rm -rf public/
       - name: Build
-        run: hugo --minify --baseURL "https://davidbruchmann.github.io/" # crisis-tracker/
+        run: hugo --minify
+        # --baseURL "https://davidbruchmann.github.io/" # crisis-tracker/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
