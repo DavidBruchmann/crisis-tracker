@@ -30,6 +30,18 @@
     {{ end }}
   </div>
 </div>
+<h3>Ground Intelligence (Live Feed)</h3>
+<ul>
+  {{ range .Site.Data.news.articles }}
+  <li>
+    <strong>{{ .publishedAt | slicestr 0 10 }}:</strong>
+    <a href="{{ .url }}" target="_blank">{{ .title }}</a>
+    <br><small>{{ .source.name }}</small>
+  </li>
+  {{ else }}
+    <li>No recent intelligence reports found. Monitoring active...</li>
+  {{ end }}
+</ul>
 <!--
 <h3>Emergency Resources</h3>
 <a href="{{ .Site.Params.vpn_link }}" class="btn">Get Crisis-Resistant VPN</a>
