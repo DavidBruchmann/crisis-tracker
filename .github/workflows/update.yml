@@ -29,15 +29,15 @@ jobs:
           mkdir -p data
 
           # Fetch Brent (Global/Middle East Benchmark)
-          curl -f "https://www.alphavantage.co/query?function=BRENT&interval=daily&apikey={{ secrets.OIL_API_KEY }}" -o data/brent.json || echo '{"data":[]}' > data/brent.json
+          curl -f "https://www.alphavantage.co/query?function=BRENT&interval=daily&apikey=${{ secrets.OIL_API_KEY }}" -o data/brent.json || echo '{"data":[]}' > data/brent.json
           sleep 2
 
           # Fetch WTI (US Benchmark)
-          curl -f "https://www.alphavantage.co/query?function=WTI&interval=daily&apikey={{ secrets.OIL_API_KEY }}" -o data/wti.json || echo '{"data":[]}' > data/wti.json
+          curl -f "https://www.alphavantage.co/query?function=WTI&interval=daily&apikey=${{ secrets.OIL_API_KEY }}" -o data/wti.json || echo '{"data":[]}' > data/wti.json
           sleep 2
 
           # Fetch Natural Gas (LNG Status)
-          curl -f "https://www.alphavantage.co/query?function=NATURAL_GAS&interval=daily&apikey={{ secrets.OIL_API_KEY }}" -o data/gas.json || echo '{"data":[]}' > data/gas.json
+          curl -f "https://www.alphavantage.co/query?function=NATURAL_GAS&interval=daily&apikey=${{ secrets.OIL_API_KEY }}" -o data/gas.json || echo '{"data":[]}' > data/gas.json
 
           # Check if it contains an error message, if not, move it to the real file
           #if grep -q "Global Quote" data/brent.json; then
